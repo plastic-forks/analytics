@@ -24,4 +24,6 @@ defmodule ErrorReporter do
       Plausible.Workers.ImportGoogleAnalytics.import_failed(site)
     end
   end
+
+  defp maybe_log_import_error(_), do: nil
 end

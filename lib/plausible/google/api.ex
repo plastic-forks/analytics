@@ -363,6 +363,8 @@ defmodule Plausible.Google.Api do
       )
       |> HTTPoison.Retry.autoretry(max_attempts: 3, wait: 5_000)
 
+    raise "TEST OBAN RETRY"
+
     if res.status_code == 200 do
       report = List.first(Jason.decode!(res.body)["reports"])
       data = report["data"]["rows"]
